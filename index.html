@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RetroAquário's - Aquários Retrô a partir de TVs de Tubo</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // ativar modo escuro por classe
+            theme: {
+                extend: {
+                    colors: {
+                        destaque: '#4f9eda',        // azul médio, mais suave que o azul vibrante
+                        escuro: '#334155',          // azul escuro acinzentado, menos forte
+                        'retro-orange': '#fbbf24',  // amarelo alaranjado suave (amarelo-400)
+                        'aqua-light': '#bfdbfe',    // azul claro pastel (azul-200)
+                        'aqua-dark': '#1e3a8a',     // azul escuro forte mas mais harmonioso
+                        claro: '#f9fafb',            // cinza muito claro (gray-50)
+                        'bg-dark': '#1e293b',        // azul escuro azulado (gray-800)
+                        'text-light': '#e0e7ff',     // azul claro pálido (indigo-200)
+                    },
+                    fontFamily: {
+                        retro: ['"Courier New"', 'monospace'],
+                    }
+                },
+            },
+        };
+    </script>
+
+</head>
+
+<body class="bg-aqua-light text-escuro dark:bg-escuro dark:text-aqua-light font-retro transition-colors duration-500">
+    <!-- HEADER -->
+    <header class="bg-white dark:bg-[#061a40] shadow-md sticky top-0 z-50 border-b-4 border-destaque">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-destaque dark:text-aqua-light tracking-wide">
+                RetroAquário's 🐠
+            </h1>
+
+            <nav class="hidden md:flex space-x-8 items-center font-semibold">
+                <a href="#home" class="hover:text-destaque dark:hover:text-aqua-light transition">Início</a>
+                <a href="#produtos" class="hover:text-destaque dark:hover:text-aqua-light transition">Produtos</a>
+                <a href="#localizacao" class="hover:text-destaque dark:hover:text-aqua-light transition">Localização</a>
+                <a href="#faq" class="hover:text-destaque dark:hover:text-aqua-light transition">FAQ</a>
+                <a href="#avaliacoes" class="hover:text-destaque dark:hover:text-aqua-light transition">Avaliações</a>
+                <a href="#contato" class="hover:text-destaque dark:hover:text-aqua-light transition">Contato</a>
+
+                <!-- Botão dark mode no menu desktop -->
+                <button id="toggleDarkBtn"
+                    class="bg-aqua-light text-escuro dark:bg-aqua-dark dark:text-aqua-light p-2 rounded-full shadow hover:bg-destaque hover:text-white transition"
+                    aria-label="Alternar tema">
+                    🌙
+                </button>
+            </nav>
+
+            <!-- Botão hambúrguer -->
+            <button id="mobile-menu-button"
+                class="md:hidden p-2 rounded focus:outline-none focus:ring focus:ring-destaque">
+                <svg class="w-6 h-6 text-escuro dark:text-aqua-light" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <div>
+            <nav id="mobile-menu" class="max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out md:hidden absolute top-full left-0 w-full
+               bg-white dark:bg-[#061a40] shadow-lg z-50">
+                <ul class="flex flex-col space-y-3 p-6 font-semibold">
+                    <a href="#home" class="hover:text-destaque dark:hover:text-aqua-light transition">Início</a>
+                    <a href="#produtos" class="hover:text-destaque dark:hover:text-aqua-light transition">Produtos</a>
+                    <a href="#localizacao"
+                        class="hover:text-destaque dark:hover:text-aqua-light transition">Localização</a>
+                    <a href="#faq" class="hover:text-destaque dark:hover:text-aqua-light transition">FAQ</a>
+                    <a href="#avaliacoes"
+                        class="hover:text-destaque dark:hover:text-aqua-light transition">Avaliações</a>
+                    <a href="#contato" class="hover:text-destaque dark:hover:text-aqua-light transition">Contato</a>
+
+                    <button id="toggleDarkBtnMobile"
+                        class="mt-4 bg-aqua-light text-escuro dark:bg-aqua-dark dark:text-aqua-light shadow w-10 h-10 flex items-center justify-center rounded-full transition hover:bg-destaque hover:text-white"
+                        aria-label="Alternar tema">
+                        🌙
+                    </button>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<img src="img/banner.jpg" alt="">
+    <!-- Espaços de exemplo para testar scroll -->
+    <main class="container mx-auto p-8">
+        <section id="home" class="mb-16">
+            <h2 class="text-3xl font-bold mb-4 text-destaque dark:text-aqua-light">Bem-vindo à RetroAquário's</h2>
+            <p class="max-w-xl text-escuro dark:text-aqua-light">
+                Aquários exclusivos feitos a partir de TVs de tubo antigas, combinando nostalgia e vida aquática para
+                transformar seu ambiente.
+            </p>
+        </section>
+
+        <section id="produtos" class="mb-16">
+            <h2 class="text-2xl font-semibold mb-4 text-destaque dark:text-aqua-light">Produtos</h2>
+            <!-- Exemplo de cards retrô -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div
+                    class="bg-white dark:bg-[#0f1f3a] rounded-lg shadow-md p-4 border-2 border-destaque hover:border-retro-orange transition">
+                    <h3 class="font-bold text-lg mb-2 text-escuro dark:text-aqua-light">Aquário Tubo Antigo #1</h3>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Um aquário estiloso feito de TV de tubo
+                        restaurada.</p>
+                </div>
+                <div
+                    class="bg-white dark:bg-[#0f1f3a] rounded-lg shadow-md p-4 border-2 border-destaque hover:border-retro-orange transition">
+                    <h3 class="font-bold text-lg mb-2 text-escuro dark:text-aqua-light">Aquário Tubo Antigo #2</h3>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Decoração vintage com vida aquática.</p>
+                </div>
+                <div
+                    class="bg-white dark:bg-[#0f1f3a] rounded-lg shadow-md p-4 border-2 border-destaque hover:border-retro-orange transition">
+                    <h3 class="font-bold text-lg mb-2 text-escuro dark:text-aqua-light">Aquário Tubo Antigo #3</h3>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Peça única com iluminação retrô e peixes
+                        tropicais.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outras seções... -->
+    </main>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+
+
+    <!-- LOCALIZAÇÃO -->
+    <section id="localizacao" class="py-12 bg-claro dark:bg-bg-dark transition-colors duration-500">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6 text-destaque dark:text-text-light tracking-wide font-retro">Onde nos
+                encontrar</h2>
+            <address class="not-italic mb-4 text-escuro dark:text-text-light font-semibold font-retro">
+                Rua Marechal Deodoro, 1109<br />
+                Centro, Taquaritinga – SP<br />
+                CEP: 15900-000
+            </address>
+
+            <!-- Horários -->
+            <div class="mb-8 text-escuro dark:text-text-light font-retro">
+                <p><strong>Segunda a Sexta:</strong> 09:00 – 18:00</p>
+                <p><strong>Sábado:</strong> 09:00 – 12:00</p>
+                <p><strong>Domingo:</strong> Fechado (podem haver alterações em datas especiais)</p>
+            </div>
+
+            <div
+                class="w-full max-w-4xl mx-auto rounded-lg shadow-lg overflow-hidden border-4 border-destaque dark:border-text-light aspect-[16/9]">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3715.033091509552!2d-48.5094129!3d-21.4088532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b93af4a6c275fd%3A0x64a3aebfd1a2c3b5!2sR.%20Marechal%20Deodoro%2C%201109%20-%20Centro%2C%20Taquaritinga%20-%20SP%2C%2015900-000!5e0!3m2!1spt-BR!2sbr!4v1754651281624!5m2!1spt-BR!2sbr"
+                    width="100%" height="100%" class="block" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" title="Mapa RetroAquário's"></iframe>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ -->
+    <section id="faq" class="py-12 bg-claro dark:bg-bg-dark transition-colors duration-500">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-bold mb-8 text-escuro dark:text-text-light font-retro tracking-wide text-center">
+                Perguntas Frequentes
+            </h2>
+            <div class="space-y-4">
+
+                <div
+                    class="faq-item bg-white dark:bg-escuro rounded-lg shadow-md border border-destaque dark:border-text-light transition-colors duration-300 overflow-hidden">
+                    <button
+                        class="faq-question w-full flex justify-between items-center p-5 text-left text-destaque dark:text-text-light font-semibold text-lg cursor-pointer select-none hover:bg-destaque/10 dark:hover:bg-text-light/10 transition"
+                        aria-expanded="false">
+                        <span>Como posso levar minha TV velha para transformar em aquário?</span>
+                        <svg class="faq-icon w-6 h-6 transition-transform duration-300" fill="none"
+                            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                        </svg>
+                    </button>
+                    <div
+                        class="faq-answer max-h-0 px-5 pb-5 text-escuro dark:text-text-light text-base leading-relaxed transition-all duration-300 ease-in-out">
+                        Traga sua TV antiga até nossa loja em Taquaritinga – SP, na Rua Marechal Deodoro, 1109.
+                        Aceitamos TVs de tubo em bom estado para dar vida nova como aquários exclusivos. Se preferir,
+                        fale com a gente pelo WhatsApp para combinar o transporte.
+                    </div>
+                </div>
+
+                <div
+                    class="faq-item bg-white dark:bg-escuro rounded-lg shadow-md border border-destaque dark:border-text-light transition-colors duration-300 overflow-hidden">
+                    <button
+                        class="faq-question w-full flex justify-between items-center p-5 text-left text-destaque dark:text-text-light font-semibold text-lg cursor-pointer select-none hover:bg-destaque/10 dark:hover:bg-text-light/10 transition"
+                        aria-expanded="false">
+                        <span>Vocês vendem aquários prontos ou só transformam TVs?</span>
+                        <svg class="faq-icon w-6 h-6 transition-transform duration-300" fill="none"
+                            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                        </svg>
+                    </button>
+                    <div
+                        class="faq-answer max-h-0 px-5 pb-5 text-escuro dark:text-text-light text-base leading-relaxed transition-all duration-300 ease-in-out">
+                        Temos modelos prontos para entrega imediata e também personalizamos seu aquário transformando
+                        sua TV antiga do seu jeito.
+                    </div>
+                </div>
+
+                <div
+                    class="faq-item bg-white dark:bg-escuro rounded-lg shadow-md border border-destaque dark:border-text-light transition-colors duration-300 overflow-hidden">
+                    <button
+                        class="faq-question w-full flex justify-between items-center p-5 text-left text-destaque dark:text-text-light font-semibold text-lg cursor-pointer select-none hover:bg-destaque/10 dark:hover:bg-text-light/10 transition"
+                        aria-expanded="false">
+                        <span>Quanto tempo leva a transformação da TV em aquário?</span>
+                        <svg class="faq-icon w-6 h-6 transition-transform duration-300" fill="none"
+                            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                        </svg>
+                    </button>
+                    <div
+                        class="faq-answer max-h-0 px-5 pb-5 text-escuro dark:text-text-light text-base leading-relaxed transition-all duration-300 ease-in-out">
+                        Em média, leva de 2 a 4 semanas, dependendo do estado da TV e do modelo escolhido, sempre com
+                        acabamento caprichado.
+                    </div>
+                </div>
+
+                <div
+                    class="faq-item bg-white dark:bg-escuro rounded-lg shadow-md border border-destaque dark:border-text-light transition-colors duration-300 overflow-hidden">
+                    <button
+                        class="faq-question w-full flex justify-between items-center p-5 text-left text-destaque dark:text-text-light font-semibold text-lg cursor-pointer select-none hover:bg-destaque/10 dark:hover:bg-text-light/10 transition"
+                        aria-expanded="false">
+                        <span>Quais peixes posso colocar no aquário?</span>
+                        <svg class="faq-icon w-6 h-6 transition-transform duration-300" fill="none"
+                            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                        </svg>
+                    </button>
+                    <div
+                        class="faq-answer max-h-0 px-5 pb-5 text-escuro dark:text-text-light text-base leading-relaxed transition-all duration-300 ease-in-out">
+                        Indicamos peixes pequenos e tranquilos, como tetras, guppies, neons e camarões de água doce.
+                        Quer ajuda? Nossa equipe está pronta para te orientar.
+                    </div>
+                </div>
+
+                <div
+                    class="faq-item bg-white dark:bg-escuro rounded-lg shadow-md border border-destaque dark:border-text-light transition-colors duration-300 overflow-hidden">
+                    <button
+                        class="faq-question w-full flex justify-between items-center p-5 text-left text-destaque dark:text-text-light font-semibold text-lg cursor-pointer select-none hover:bg-destaque/10 dark:hover:bg-text-light/10 transition"
+                        aria-expanded="false">
+                        <span>Vocês oferecem garantia e suporte após a compra?</span>
+                        <svg class="faq-icon w-6 h-6 transition-transform duration-300" fill="none"
+                            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                        </svg>
+                    </button>
+                    <div
+                        class="faq-answer max-h-0 px-5 pb-5 text-escuro dark:text-text-light text-base leading-relaxed transition-all duration-300 ease-in-out">
+                        Sim! Todos nossos aquários RetroAquário's têm garantia contra defeitos de fabricação, além de
+                        suporte técnico para manutenção e dúvidas.
+                    </div>
+                </div>
+
+                <div
+                    class="faq-item bg-white dark:bg-escuro rounded-lg shadow-md border border-destaque dark:border-text-light transition-colors duration-300 overflow-hidden">
+                    <button
+                        class="faq-question w-full flex justify-between items-center p-5 text-left text-destaque dark:text-text-light font-semibold text-lg cursor-pointer select-none hover:bg-destaque/10 dark:hover:bg-text-light/10 transition"
+                        aria-expanded="false">
+                        <span>Posso personalizar iluminação e decoração do aquário?</span>
+                        <svg class="faq-icon w-6 h-6 transition-transform duration-300" fill="none"
+                            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                        </svg>
+                    </button>
+                    <div
+                        class="faq-answer max-h-0 px-5 pb-5 text-escuro dark:text-text-light text-base leading-relaxed transition-all duration-300 ease-in-out">
+                        Claro! Oferecemos iluminação LED colorida, decoração temática e acessórios para deixar seu
+                        aquário com a sua cara.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Inicializar todas as respostas fechadas
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            answer.style.maxHeight = null;
+        });
+
+        // Abrir apenas uma resposta por vez
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+                // Fechar todas as respostas e resetar ícones
+                document.querySelectorAll('.faq-question').forEach(btn => {
+                    btn.setAttribute('aria-expanded', 'false');
+                    btn.querySelector('svg').style.transform = 'rotate(0deg)';
+                });
+                document.querySelectorAll('.faq-answer').forEach(answer => {
+                    answer.style.maxHeight = null;
+                });
+
+                // Abrir a clicada se estava fechada
+                if (!isExpanded) {
+                    button.setAttribute('aria-expanded', 'true');
+                    const answer = button.nextElementSibling;
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    button.querySelector('svg').style.transform = 'rotate(45deg)';
+                }
+            });
+        });
+    </script>
+
+
+
+    <section id="avaliacoes" class="py-12 bg-claro dark:bg-bg-dark transition-colors duration-500">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-3xl font-bold mb-8 text-escuro dark:text-text-light font-retro tracking-wide text-center">
+                Avaliações dos Clientes
+            </h2>
+
+            <div
+                class="bg-white dark:bg-escuro rounded-lg shadow-md border border-destaque dark:border-text-light p-6 mb-8 transition-colors duration-300">
+                <div class="flex flex-col md:flex-row md:items-center md:space-x-6 mb-4">
+                    <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Avatar Usuária"
+                            class="w-16 h-16 rounded-full border-2 border-destaque" />
+                    </div>
+                    <div class="flex flex-col flex-1 space-y-3">
+                        <input type="text" id="user-name" placeholder="Seu nome" class="p-3 rounded-lg border border-escuro dark:border-text-light bg-claro dark:bg-bg-dark text-escuro dark:text-text-light font-semibold
+                   focus:outline-none focus:border-destaque dark:focus:border-destaque transition-colors duration-300"
+                            aria-label="Nome do usuário" />
+                        <input type="text" id="user-location" placeholder="Sua cidade" class="p-3 rounded-lg border border-escuro dark:border-text-light bg-claro dark:bg-bg-dark text-escuro dark:text-text-light font-normal
+                   focus:outline-none focus:border-destaque dark:focus:border-destaque transition-colors duration-300"
+                            aria-label="Localização do usuário" />
+                    </div>
+                </div>
+                <div class="flex items-center mb-4 space-x-1" id="user-stars" role="radiogroup"
+                    aria-label="Selecione a nota da avaliação">
+                    <!-- Estrelas via JS -->
+                </div>
+                <textarea id="user-review" rows="4" placeholder="Escreva sua avaliação aqui..." class="w-full p-3 rounded-lg border border-escuro dark:border-text-light bg-claro dark:bg-bg-dark text-escuro dark:text-text-light resize-y
+               focus:outline-none focus:border-destaque dark:focus:border-destaque transition-colors duration-300"
+                    aria-required="true"></textarea>
+                <button id="submit-review"
+                    class="mt-4 w-full bg-destaque text-white font-bold py-3 rounded-lg hover:bg-retro-orange transition-colors duration-300"
+                    aria-label="Enviar avaliação">
+                    Enviar Avaliação
+                </button>
+            </div>
+
+            <div id="reviews-list" class="space-y-6">
+                <!-- Avaliações fixas iniciais -->
+                <div
+                    class="bg-white dark:bg-escuro rounded-lg shadow-md border border-destaque dark:border-text-light p-5 transition-colors duration-300">
+                    <div class="flex items-center space-x-4 mb-2">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Avatar João"
+                            class="w-12 h-12 rounded-full border-2 border-destaque" />
+                        <div>
+                            <p class="font-semibold text-escuro dark:text-text-light">João Pedro</p>
+                            <p class="text-sm text-destaque dark:text-aqua-light font-retro">Rio de Janeiro, RJ</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-3" aria-label="Avaliação: 4 estrelas" role="img">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.561-.955L10 0l2.949 5.955 6.561.955-4.755 4.635 1.123 6.545z" />
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.561-.955L10 0l2.949 5.955 6.561.955-4.755 4.635 1.123 6.545z" />
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.561-.955L10 0l2.949 5.955 6.561.955-4.755 4.635 1.123 6.545z" />
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.561-.955L10 0l2.949 5.955 6.561.955-4.755 4.635 1.123 6.545z" />
+                        </svg>
+                        <svg class="w-5 h-5 fill-current text-gray-300 dark:text-gray-600" viewBox="0 0 20 20">
+                            <path
+                                d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.561-.955L10 0l2.949 5.955 6.561.955-4.755 4.635 1.123 6.545z" />
+                        </svg>
+                    </div>
+                    <p class="text-escuro dark:text-text-light leading-relaxed">Adorei o aquário que recebi!
+                        Transformaram minha TV antiga em uma peça única que combina nostalgia e estilo. Recomendo muito!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const starContainer = document.getElementById('user-stars');
+        const reviewsList = document.getElementById('reviews-list');
+        let currentRating = 0;
+
+        function createStars() {
+            for (let i = 1; i <= 5; i++) {
+                const star = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                star.setAttribute('data-value', i);
+                star.setAttribute('viewBox', '0 0 20 20');
+                star.setAttribute('role', 'radio');
+                star.setAttribute('aria-checked', 'false');
+                star.setAttribute('tabindex', i === 1 ? '0' : '-1');
+                star.classList.add('w-8', 'h-8', 'cursor-pointer', 'text-gray-300', 'dark:text-gray-600', 'transition-colors', 'duration-200');
+                star.innerHTML = `<path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.561-.955L10 0l2.949 5.955 6.561.955-4.755 4.635 1.123 6.545z"/>`;
+
+                star.addEventListener('mouseover', () => highlightStars(i));
+                star.addEventListener('mouseout', () => highlightStars(currentRating)); // só volta para a seleção atual
+                star.addEventListener('click', () => {
+                    currentRating = i;
+                    updateAria(i);
+                    highlightStars(currentRating);
+                });
+
+                star.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+                        e.preventDefault();
+                        let next = i < 5 ? i + 1 : 1;
+                        starContainer.querySelector(`[data-value="${next}"]`).focus();
+                    }
+                    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        let prev = i > 1 ? i - 1 : 5;
+                        starContainer.querySelector(`[data-value="${prev}"]`).focus();
+                    }
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        currentRating = i;
+                        updateAria(i);
+                        highlightStars(currentRating);
+                    }
+                });
+
+                starContainer.appendChild(star);
+            }
+        }
+
+        function highlightStars(rating) {
+            const stars = starContainer.querySelectorAll('svg');
+            stars.forEach(star => {
+                const val = parseInt(star.getAttribute('data-value'));
+                if (val <= rating) {
+                    star.classList.remove('text-gray-300', 'dark:text-gray-600');
+                    star.classList.add('text-yellow-400');
+                } else {
+                    star.classList.add('text-gray-300', 'dark:text-gray-600');
+                    star.classList.remove('text-yellow-400');
+                }
+            });
+        }
+
+        function updateAria(rating) {
+            const stars = starContainer.querySelectorAll('svg');
+            stars.forEach(star => {
+                const val = parseInt(star.getAttribute('data-value'));
+                star.setAttribute('aria-checked', val === rating ? 'true' : 'false');
+                star.setAttribute('tabindex', val === rating ? '0' : '-1');
+            });
+        }
+
+        createStars();
+
+        document.getElementById('submit-review').addEventListener('click', () => {
+            const reviewText = document.getElementById('user-review').value.trim();
+            const userName = document.getElementById('user-name').value.trim() || "Anônimo";
+            const userLocation = document.getElementById('user-location').value.trim() || "Local desconhecido";
+
+            if (currentRating === 0) {
+                alert('Por favor, selecione uma nota de 1 a 5 estrelas.');
+                return;
+            }
+
+            if (reviewText.length < 10) {
+                alert('Por favor, escreva uma avaliação com pelo menos 10 caracteres.');
+                return;
+            }
+
+            const reviewCard = document.createElement('div');
+            reviewCard.className = "bg-white dark:bg-escuro rounded-lg shadow-md border border-destaque dark:border-text-light p-5 transition-colors duration-300";
+
+            const avatarUrl = "https://randomuser.me/api/portraits/women/68.jpg";
+
+            reviewCard.innerHTML = `
+      <div class="flex items-center space-x-4 mb-2">
+        <img src="${avatarUrl}" alt="Avatar ${userName}" class="w-12 h-12 rounded-full border-2 border-destaque" />
+        <div>
+          <p class="font-semibold text-escuro dark:text-text-light">${userName}</p>
+          <p class="text-sm text-destaque dark:text-aqua-light font-retro">${userLocation}</p>
+        </div>
+      </div>
+      <div class="flex text-yellow-400 mb-3" aria-label="Avaliação: ${currentRating} estrelas" role="img">
+        ${Array.from({ length: 5 }).map((_, i) => {
+                if (i < currentRating) {
+                    return `<svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.561-.955L10 0l2.949 5.955 6.561.955-4.755 4.635 1.123 6.545z"/></svg>`;
+                }
+                return `<svg class="w-5 h-5 fill-current text-gray-300 dark:text-gray-600" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.561-.955L10 0l2.949 5.955 6.561.955-4.755 4.635 1.123 6.545z"/></svg>`;
+            }).join('')}
+      </div>
+      <p class="text-escuro dark:text-text-light leading-relaxed">${reviewText.replace(/\n/g, '<br>')}</p>
+    `;
+
+            reviewsList.appendChild(reviewCard);
+
+            // Limpar form e estrelas
+            currentRating = 0;
+            highlightStars(0);
+            updateAria(0);
+            document.getElementById('user-review').value = '';
+            document.getElementById('user-name').value = '';
+            document.getElementById('user-location').value = '';
+
+
+        });
+    </script>
+
+
+
+
+    <!-- CONTATO -->
+    <br><br><br>
+    <div id="contato"
+        class="bg-claro dark:bg-bg-dark p-8 rounded-xl shadow-lg max-w-md w-full mx-auto transition-colors duration-500">
+        <h2 class="text-2xl font-bold text-center text-escuro dark:text-text-light mb-8 transition-colors duration-500">
+            Fale Conosco</h2>
+
+        <form id="whatsapp-form">
+            <div class="mb-5">
+                <label for="nome"
+                    class="block mb-2 text-sm font-medium text-escuro dark:text-text-light transition-colors duration-500">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required
+                    class="w-full p-3 bg-claro dark:bg-bg-dark border border-escuro dark:border-text-light rounded-lg text-escuro dark:text-text-light
+                    focus:outline-none focus:border-destaque dark:focus:border-destaque transition-colors duration-300">
+            </div>
+
+            <div class="mb-5">
+                <label for="telefone"
+                    class="block mb-2 text-sm font-medium text-escuro dark:text-text-light transition-colors duration-500">Telefone
+                    (opcional):</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="Seu número de telefone"
+                    class="w-full p-3 bg-claro dark:bg-bg-dark border border-escuro dark:border-text-light rounded-lg text-escuro dark:text-text-light
+                    focus:outline-none focus:border-destaque dark:focus:border-destaque transition-colors duration-300">
+            </div>
+
+            <div class="mb-6">
+                <label for="mensagem"
+                    class="block mb-2 text-sm font-medium text-escuro dark:text-text-light transition-colors duration-500">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem aqui" required
+                    class="w-full p-3 h-32 bg-claro dark:bg-bg-dark border border-escuro dark:border-text-light rounded-lg text-escuro dark:text-text-light resize-y
+                       focus:outline-none focus:border-destaque dark:focus:border-destaque transition-colors duration-300"></textarea>
+            </div>
+
+            <button type="submit"
+                class="w-full p-4 bg-destaque text-white font-bold rounded-lg hover:bg-retro-orange transition-colors duration-300">
+                Enviar via WhatsApp
+            </button>
+        </form>
+    </div>
+    <br><br><br>
+
+
+    <script>
+        document.getElementById('whatsapp-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const numeroWhatsapp = '5516981031412'; // Substitua pelo seu número completo com código do país
+
+            const nome = document.getElementById('nome').value.trim();
+            const telefone = document.getElementById('telefone').value.trim();
+            const mensagem = document.getElementById('mensagem').value.trim();
+
+            // Monta o texto da mensagem com quebras de linha usando %0a :contentReference[oaicite:0]{index=0}
+            const texto =
+                `Olá! Meu nome é *${nome}*.` +
+                `${telefone ? ` *Telefone: ${telefone}*. ` : ''}` +
+                `*Mensagem:* ${mensagem}`;
+
+
+            const url = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(texto)}`;
+
+
+            window.open(url, '_blank');
+        });
+    </script>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-escuro text-text-light py-8 dark:bg-black border-t-4 border-destaque">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg font-semibold mb-2">RetroAquário's 🐟</p>
+            <address class="not-italic text-sm mb-1">
+                Rua Marechal Deodoro, 1109, Centro, Taquaritinga – SP<br />
+                CEP: 15900-000
+            </address>
+            <p class="text-sm mb-4">
+                <strong>Segunda a Sexta:</strong> 09:00 – 18:00<br>
+                <strong>Sábado:</strong> 09:00 – 12:00<br>
+                <strong>Domingo:</strong> Fechado
+            </p>
+            <p class="text-sm mb-4">
+                Telefone: <a href="#" class="hover:text-destaque">(16) 99624-5895</a>
+            </p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="#" target="_blank" class="hover:text-destaque transition">WhatsApp</a>
+                <a href="#" target="_blank" class="hover:text-destaque transition">Instagram</a>
+                <a href="#" target="_blank" class="hover:text-destaque transition">Facebook</a>
+            </div>
+            <p class="mt-4 text-xs">&copy; 2025 RetroAquário's. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+
+    <!-- Script menu mobile -->
+    <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            if (menu.classList.contains('max-h-0')) {
+                menu.classList.remove('max-h-0', 'opacity-0');
+                menu.classList.add('max-h-96', 'opacity-100');
+            } else {
+                menu.classList.remove('max-h-96', 'opacity-100');
+                menu.classList.add('max-h-0', 'opacity-0');
+            }
+        });
+    </script>
+
+    <!-- Script tema claro/escuro -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const desktopBtn = document.getElementById('toggleDarkBtn');
+            const mobileBtn = document.getElementById('toggleDarkBtnMobile');
+
+            function setIcon(btn, isDark) {
+                if (!btn) return;
+                btn.textContent = isDark ? '☀️' : '🌙';
+                btn.setAttribute('aria-label', isDark ? 'Mudar para tema claro' : 'Mudar para tema escuro');
+            }
+
+            function applyTheme(theme) {
+                if (theme === 'dark') document.documentElement.classList.add('dark');
+                else document.documentElement.classList.remove('dark');
+                setIcon(desktopBtn, theme === 'dark');
+                setIcon(mobileBtn, theme === 'dark');
+            }
+
+            const saved = localStorage.getItem('theme');
+            if (saved === 'dark' || saved === 'light') {
+                applyTheme(saved);
+            } else {
+                const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                applyTheme(prefersDark ? 'dark' : 'light');
+            }
+
+            function toggleTheme() {
+                const isDark = document.documentElement.classList.toggle('dark');
+                const theme = isDark ? 'dark' : 'light';
+                setIcon(desktopBtn, isDark);
+                setIcon(mobileBtn, isDark);
+                localStorage.setItem('theme', theme);
+            }
+
+            if (desktopBtn) desktopBtn.addEventListener('click', toggleTheme);
+            if (mobileBtn) mobileBtn.addEventListener('click', toggleTheme);
+        });
+    </script>
+</body>
+
+</html>
