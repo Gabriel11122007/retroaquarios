@@ -767,13 +767,14 @@
         function createStars() {
             for (let i = 1; i <= 5; i++) {
                 const star = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-                star.setAttribute('data-value', i);
-                star.setAttribute('viewBox', '0 0 20 20');
-                star.setAttribute('role', 'radio');
-                star.setAttribute('aria-checked', 'false');
-                star.setAttribute('tabindex', i === 1 ? '0' : '-1');
-                star.classList.add('w-8', 'h-8', 'cursor-pointer', 'text-gray-300', 'dark:text-gray-600', 'transition-colors', 'duration-200');
-                star.innerHTML = `<path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.561-.955L10 0l2.949 5.955 6.561.955-4.755 4.635 1.123 6.545z"/>`;
+star.setAttribute('data-value', i);
+star.setAttribute('viewBox', '0 0 20 20');
+star.setAttribute('fill', 'currentColor');  // <-- adiciona aqui
+star.setAttribute('role', 'radio');
+star.setAttribute('aria-checked', 'false');
+star.setAttribute('tabindex', i === 1 ? '0' : '-1');
+star.classList.add('w-8', 'h-8', 'cursor-pointer', 'text-gray-300', 'dark:text-gray-600', 'transition-colors', 'duration-200');
+star.innerHTML = `<path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.561-.955L10 0l2.949 5.955 6.561.955-4.755 4.635 1.123 6.545z"/>`;
 
                 star.addEventListener('mouseover', () => highlightStars(i));
                 star.addEventListener('mouseout', () => highlightStars(currentRating)); // só volta para a seleção atual
