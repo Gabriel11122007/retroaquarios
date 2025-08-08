@@ -35,11 +35,13 @@
             width: 200px;
             cursor: pointer;
         }
+
         .selected {
             padding: 10px;
             border: 1px solid #888;
             background: white;
         }
+
         .options {
             display: none;
             position: absolute;
@@ -50,15 +52,19 @@
             border: 1px solid #888;
             background: white;
         }
+
         .options div {
             padding: 10px;
         }
+
         .options div:hover {
             background-color: #000e8a;
         }
+
         .custom-select.open .options {
             display: block;
         }
+
         .button-33 {
             background-color: #1e5db3;
             /* Azul vivo */
@@ -84,6 +90,7 @@
             -webkit-user-select: none;
             touch-action: manipulation;
         }
+
         .button-33:hover {
             background-color: #15397a;
             /* Azul/índigo mais escuro */
@@ -95,6 +102,7 @@
                 rgba(21, 57, 122, 0.25) 0 16px 32px;
             transform: scale(1.05) rotate(-1deg);
         }
+
         .button-31 {
             background-color: #d90000;
             border-radius: 4px;
@@ -122,16 +130,19 @@
             touch-action: manipulation;
             width: 100%;
         }
+
         .button-31:hover,
         .button-31:focus {
             opacity: .75;
         }
+
         .card {
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
         }
+
         .parcelado {
             display: flex;
             flex-direction: row;
@@ -201,23 +212,22 @@
             Nossa mais nova criação
         </h1>
         <div class="flex flex-col md:flex-row items-start gap-16 bg-white dark:bg-gray-900 p-6 rounded-lg">
-            <div class="flex-1 font-caprasimo
-              text-gray-900 dark:text-white
-              ">
+            <div class="flex-1 font-caprasimo text-gray-900 dark:text-white">
                 <h2 class="text-3xl xl:text-4xl mb-6">
                     Uma decoração única e retrô
                 </h2>
                 <p class="text-lg xl:text-xl max-w-lg leading-relaxed mb-8">
-                    Conheça o produto que vai transformar seu ambiente com estilo e personalidade. Design exclusivo e
-                    acabamento impecável para quem valoriza o melhor.
+                    Conheça o produto que vai transformar seu ambiente com estilo e personalidade.
+                    Design exclusivo e acabamento impecável para quem valoriza o melhor.
                 </p>
                 <div class="flex gap-4">
-                    <button class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700
-               transition-colors text-white font-bold py-3 px-8 rounded-full">
+                    <!-- Botão que abre o mesmo modal de pagamento -->
+                    <button id="btnComprarNova" class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700
+                   transition-colors text-white font-bold py-3 px-8 rounded-full">
                         Comprar Agora
                     </button>
                     <button class="bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600
-               transition-colors text-white font-semibold py-3 px-8 rounded-full">
+                   transition-colors text-white font-semibold py-3 px-8 rounded-full">
                         Saiba Mais
                     </button>
                 </div>
@@ -230,14 +240,30 @@
             </div>
         </div>
     </div>
+    <script>
+        // Botão da seção "Nossa mais nova criação"
+        document.getElementById("btnComprarNova").addEventListener("click", () => {
+            modalPagamento.classList.remove("hidden");
+        });
+
+    </script>
 
     <main class="container mx-auto p-8">
-        <section id="home" class="mb-16">
-            <h2 class="text-3xl font-bold mb-4 text-destaque dark:text-aqua-light">Bem-vindo à RetroAquário's</h2>
-            <p class="max-w-xl text-escuro dark:text-aqua-light">
-                Aquários exclusivos feitos a partir de TVs de tubo antigas, combinando nostalgia e vida aquática para
-                transformar seu ambiente.
-            </p>
+        <section id="home" class="mb-16 text-center md:text-left px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 
+               text-destaque dark:text-aqua-light 
+               drop-shadow-lg">
+                    Bem-vindo à RetroAquário's
+                </h2>
+                <p class="text-lg md:text-xl leading-relaxed 
+              text-escuro dark:text-aqua-light 
+              bg-white/70 dark:bg-gray-800/70 
+              p-4 rounded-lg shadow-md">
+                    Aquários exclusivos feitos a partir de TVs de tubo antigas,
+                    combinando nostalgia e vida aquática para transformar seu ambiente.
+                </p>
+            </div>
         </section>
 
         <section id="produtos" class="mb-16">
@@ -270,65 +296,173 @@
             </div>
         </section>
 
+        <!-- PRODUTO -->
         <div class="bg-azul-200 place-items-center m-2">
-            <section class="bg-indigo-900 place-items-center card rounded-lg w-auto pb-4 p-6 m-2">
+            <section
+                class="bg-indigo-900 dark:bg-gray-800 place-items-center card rounded-lg w-auto pb-4 p-6 m-2 shadow-lg">
                 <img src="img/imagemtv.png" alt="Aquário de Televisão Retrô" class="w-80" />
-                <h2 class="text-gray-200 font-bold text-2xl mb-4 px-5">Aquário de Televisão Retrô</h2>
+                <h2 class="text-gray-200 dark:text-gray-100 font-bold text-2xl mb-4 px-5">Aquário de Televisão Retrô
+                </h2>
                 <h1 class="text-red-600 font-bold text-7xl mb-8">R$699,99</h1>
-                <button class="button-31 mb-4" role="button">COMPRAR</button>
+
+                <!-- Botão Comprar -->
+                <button id="btnComprar"
+                    class="bg-destaque text-white px-6 py-2 rounded-lg hover:bg-yellow-500 transition">COMPRAR</button>
+
+                <!-- Parcelamento -->
                 <div class="parcelado flex items-center mt-4">
-                    <p class="text-gray-200 font-bold text-l pr-2 mb-0">Ou</p>
-                    <div class="custom-select parcelas bt-4 rounded-lg text-blue-100 bg-indigo-900 ml-2 relative w-48">
-                        <div class="selected bg-indigo-600 cursor-pointer p-3 rounded-md">Opções</div>
+                    <p class="text-gray-200 dark:text-gray-300 font-bold text-l pr-2 mb-0">Ou</p>
+
+                    <div
+                        class="custom-select parcelas bt-4 rounded-lg text-blue-100 dark:text-gray-200 bg-indigo-900 dark:bg-gray-700 ml-2 relative w-48">
+                        <div class="selected bg-indigo-600 dark:bg-gray-600 cursor-pointer p-3 rounded-md">Opções</div>
                         <div
-                            class="options bg-indigo-600 absolute rounded-lg mt-1 w-full z-10 hidden shadow-lg max-h-48 overflow-auto">
-                            <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700">10x de R$74,99</div>
-                            <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700">9x de R$83,33</div>
-                            <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700">8x de R$97,75</div>
-                            <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700">7x de R$107,15</div>
-                            <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700">6x de R$124,99</div>
-                            <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700">5x de R$149,99</div>
-                            <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700">4x de R$187,49</div>
-                            <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700">3x de R$233,33 sem juros
-                            </div>
-                            <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700">2x de R$349,99 sem juros
-                            </div>
+                            class="options bg-indigo-600 dark:bg-gray-600 absolute rounded-lg mt-1 w-full z-10 hidden shadow-lg max-h-48 overflow-auto">
+                            <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700 dark:hover:bg-gray-500">10x
+                                de R$74,99</div>
+                            <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700 dark:hover:bg-gray-500">9x
+                                de R$83,33</div>
+                            <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700 dark:hover:bg-gray-500">8x
+                                de R$97,75</div>
+                            <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700 dark:hover:bg-gray-500">7x
+                                de R$107,15</div>
+                            <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700 dark:hover:bg-gray-500">6x
+                                de R$124,99</div>
+                            <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700 dark:hover:bg-gray-500">5x
+                                de R$149,99</div>
+                            <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700 dark:hover:bg-gray-500">4x
+                                de R$187,49</div>
+                            <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700 dark:hover:bg-gray-500">3x
+                                de R$233,33 sem juros</div>
+                            <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700 dark:hover:bg-gray-500">2x
+                                de R$349,99 sem juros</div>
                         </div>
                     </div>
-                    <button class="button-33 ml-4" role="button">Parcelar</button>
+
+                    <button id="btnParcelar"
+                        class="ml-4 bg-destaque text-white px-6 py-2 rounded-lg hover:bg-yellow-500 transition">Parcelar</button>
                 </div>
             </section>
+        </div>
 
+        <!-- MODAIS -->
+        <!-- Modal Pagamento -->
+        <div id="modalPagamento"
+            class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
+            <div class="bg-white dark:bg-gray-800 dark:text-gray-100 rounded-lg p-6 max-w-md w-full shadow-lg">
+                <h2 class="text-xl font-bold mb-4">Escolha a forma de pagamento</h2>
+                <div class="flex flex-col gap-4">
+                    <button id="btnPix" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">Pagar com
+                        PIX</button>
+                    <button id="btnCartao" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Pagar com
+                        Cartão</button>
+                </div>
+                <button id="fecharModal" class="mt-6 text-gray-500 hover:underline">Cancelar</button>
+            </div>
+        </div>
+
+        <!-- Modal PIX -->
+        <div id="modalPix" class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
+            <div
+                class="bg-white dark:bg-gray-800 dark:text-gray-100 rounded-lg p-6 max-w-md w-full shadow-lg text-center">
+                <h2 class="text-xl font-bold mb-4">Pague via PIX</h2>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=chavepix@exemplo.com"
+                    alt="QR Code PIX" class="mx-auto mb-4">
+                <p class="mb-4">Escaneie o QR Code acima ou use a chave:</p>
+                <p class="font-mono bg-gray-100 dark:bg-gray-700 p-2 rounded">ggabrielmarcelino@gmail.com</p>
+                <button id="fecharPix"
+                    class="mt-6 bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded">Fechar</button>
+            </div>
+        </div>
+
+        <!-- Modal Cartão -->
+        <div id="modalCartao" class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
+            <div class="bg-white dark:bg-gray-800 dark:text-gray-100 rounded-lg p-6 max-w-md w-full shadow-lg">
+                <h2 class="text-xl font-bold mb-4">Pagamento com Cartão</h2>
+                <form id="formCartao">
+                    <input type="text" placeholder="Número do cartão"
+                        class="border p-2 w-full mb-2 rounded dark:bg-gray-700 dark:border-gray-600">
+                    <input type="text" placeholder="Nome no cartão"
+                        class="border p-2 w-full mb-2 rounded dark:bg-gray-700 dark:border-gray-600">
+                    <div class="flex gap-2">
+                        <input type="text" placeholder="Validade (MM/AA)"
+                            class="border p-2 w-1/2 rounded dark:bg-gray-700 dark:border-gray-600">
+                        <input type="text" placeholder="CVV"
+                            class="border p-2 w-1/2 rounded dark:bg-gray-700 dark:border-gray-600">
+                    </div>
+                    <button type="submit"
+                        class="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded w-full">Finalizar
+                        Pagamento</button>
+                </form>
+                <button id="fecharCartao" class="mt-6 text-gray-500 hover:underline">Cancelar</button>
+            </div>
         </div>
 
         <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const select = document.querySelector('.custom-select');
-                const selected = select.querySelector('.selected');
-                const optionsContainer = select.querySelector('.options');
-                const optionsList = optionsContainer.querySelectorAll('.option');
+            // Controle do parcelamento
+            const selected = document.querySelector(".selected");
+            const optionsContainer = document.querySelector(".options");
+            const optionsList = document.querySelectorAll(".option");
+            let parcelaEscolhida = null;
 
-                // Toggle dropdown on clicking selected
-                selected.addEventListener('click', () => {
-                    optionsContainer.classList.toggle('hidden');
-                });
-
-                // When clicking an option, update selected text and close dropdown
-                optionsList.forEach(option => {
-                    option.addEventListener('click', () => {
-                        selected.textContent = option.textContent;
-                        optionsContainer.classList.add('hidden');
-                    });
-                });
-
-                // Click outside closes the dropdown
-                document.addEventListener('click', (event) => {
-                    if (!select.contains(event.target)) {
-                        optionsContainer.classList.add('hidden');
-                    }
+            selected.addEventListener("click", () => {
+                optionsContainer.classList.toggle("hidden");
+            });
+            optionsList.forEach(option => {
+                option.addEventListener("click", () => {
+                    selected.innerText = option.innerText;
+                    parcelaEscolhida = option.innerText;
+                    optionsContainer.classList.add("hidden");
                 });
             });
+
+            // Modais
+            const modalPagamento = document.getElementById("modalPagamento");
+            const modalPix = document.getElementById("modalPix");
+            const modalCartao = document.getElementById("modalCartao");
+
+            document.getElementById("btnComprar").addEventListener("click", () => {
+                modalPagamento.classList.remove("hidden");
+            });
+
+            document.getElementById("btnParcelar").addEventListener("click", () => {
+                if (parcelaEscolhida) {
+                    modalPagamento.classList.remove("hidden");
+                } else {
+                    alert("Escolha uma opção de parcelamento primeiro.");
+                }
+            });
+
+            document.getElementById("fecharModal").addEventListener("click", () => {
+                modalPagamento.classList.add("hidden");
+            });
+
+            // PIX
+            document.getElementById("btnPix").addEventListener("click", () => {
+                modalPagamento.classList.add("hidden");
+                modalPix.classList.remove("hidden");
+            });
+            document.getElementById("fecharPix").addEventListener("click", () => {
+                modalPix.classList.add("hidden");
+            });
+
+            // Cartão
+            document.getElementById("btnCartao").addEventListener("click", () => {
+                modalPagamento.classList.add("hidden");
+                modalCartao.classList.remove("hidden");
+            });
+            document.getElementById("fecharCartao").addEventListener("click", () => {
+                modalCartao.classList.add("hidden");
+            });
+
+            // Finalizar pagamento no cartão
+            document.getElementById("formCartao").addEventListener("submit", function (e) {
+                e.preventDefault();
+                modalCartao.classList.add("hidden");
+                alert("✅ Pagamento realizado com sucesso!");
+            });
         </script>
+
 
         <script>
             document.querySelector('.selected').addEventListener('click', function () {
