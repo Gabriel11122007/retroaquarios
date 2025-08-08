@@ -30,7 +30,128 @@
         };
     </script>
 
+<style>
+.custom-select {
+    position: relative;
+    width: 200px;
+    cursor: pointer;
+}
+
+.selected {
+    padding: 10px;
+    border: 1px solid #888;
+    background: white;
+}
+
+.options {
+    display: none;
+    position: absolute;
+    bottom: 100%; /* Abre para cima */
+    left: 0;
+    width: 100%;
+    border: 1px solid #888;
+    background: white;
+}
+
+.options div {
+    padding: 10px;
+}
+
+.options div:hover {
+    background-color: #000e8a;
+}
+
+.custom-select.open .options {
+    display: block;
+}
+
+
+.button-33 {
+  background-color: #1e5db3; /* Azul vivo */
+  border-radius: 100px;
+  box-shadow: rgba(30, 93, 179, 0.2) 0 -25px 18px -14px inset,
+              rgba(30, 93, 179, 0.15) 0 1px 2px,
+              rgba(30, 93, 179, 0.15) 0 2px 4px,
+              rgba(30, 93, 179, 0.15) 0 4px 8px,
+              rgba(30, 93, 179, 0.15) 0 8px 16px,
+              rgba(30, 93, 179, 0.15) 0 16px 32px;
+  color: #ffffff; /* Texto branco */
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-33:hover {
+  background-color: #15397a; /* Azul/índigo mais escuro */
+  box-shadow: rgba(21, 57, 122, 0.35) 0 -25px 18px -14px inset,
+              rgba(21, 57, 122, 0.25) 0 1px 2px,
+              rgba(21, 57, 122, 0.25) 0 2px 4px,
+              rgba(21, 57, 122, 0.25) 0 4px 8px,
+              rgba(21, 57, 122, 0.25) 0 8px 16px,
+              rgba(21, 57, 122, 0.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+
+
+.button-31 {
+  background-color: #d90000;
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 10vw;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+.button-31:hover,
+.button-31:focus {
+  opacity: .75;
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.parcelado{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-top: 20px;
+}
+</style>
 </head>
+
 
 <body class="bg-aqua-light text-escuro dark:bg-escuro dark:text-aqua-light font-retro transition-colors duration-500">
     <!-- HEADER -->
@@ -122,11 +243,79 @@
             </div>
         </section>
 
+
+
+<div class="bg-azul-200 place-items-center">
+
+  <section class="bg-indigo-900 place-items-center card rounded-lg w-auto pb-4 p-6">
+    <img src="img/imagemtv.png" alt="Aquário de Televisão Retrô" class="w-80" />
+    <h2 class="text-gray-200 font-bold text-2xl mb-4 px-5">Aquário de Televisão Retrô</h2>
+    <h1 class="text-red-600 font-bold text-7xl mb-8">R$699,99</h1>
+    <button class="button-31" role="button">COMPRAR</button>
+    <div class="parcelado flex items-center mt-4">
+      <p class="text-gray-200 font-bold text-l pr-2 mb-0">Ou</p>
+      <div class="custom-select parcelas bt-4 rounded-lg text-blue-100 bg-indigo-900 ml-2 relative w-48">
+        <div class="selected bg-indigo-600 cursor-pointer p-3 rounded-md">Opções</div>
+        <div class="options bg-indigo-600 absolute rounded-lg mt-1 w-full z-10 hidden shadow-lg max-h-48 overflow-auto">
+          <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700">10x de R$74,99</div>
+          <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700">9x de R$83,33</div>
+          <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700">8x de R$97,75</div>
+          <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700">7x de R$107,15</div>
+          <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700">6x de R$124,99</div>
+          <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700">5x de R$149,99</div>
+          <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700">4x de R$187,49</div>
+          <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700">3x de R$233,33 sem juros</div>
+          <div class="option cursor-pointer px-2 py-1 hover:bg-indigo-700">2x de R$349,99 sem juros</div>
+        </div>
+      </div>
+      <button class="button-33 ml-4" role="button">Parcelar</button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const select = document.querySelector('.custom-select');
+    const selected = select.querySelector('.selected');
+    const optionsContainer = select.querySelector('.options');
+    const optionsList = optionsContainer.querySelectorAll('.option');
+
+    // Toggle dropdown on clicking selected
+    selected.addEventListener('click', () => {
+      optionsContainer.classList.toggle('hidden');
+    });
+
+    // When clicking an option, update selected text and close dropdown
+    optionsList.forEach(option => {
+      option.addEventListener('click', () => {
+        selected.textContent = option.textContent;
+        optionsContainer.classList.add('hidden');
+      });
+    });
+
+    // Click outside closes the dropdown
+    document.addEventListener('click', (event) => {
+      if (!select.contains(event.target)) {
+        optionsContainer.classList.add('hidden');
+      }
+    });
+  });
+</script>
+
+
+    
+
+<script>
+    document.querySelector('.selected').addEventListener('click', function(){
+        this.parentElement.classList.toggle('open');
+    });
+</script>
+
+
         <!-- Outras seções... -->
     </main>
-    <br><br><br><br><br><br>
-    <br><br><br><br><br><br>
-    <br><br><br><br><br><br>
+
 
 
     <!-- LOCALIZAÇÃO -->
