@@ -207,46 +207,73 @@
         </div>
     </header>
     <img src="img/banner.jpg" alt="" style="width: 100vw;">
-    <div class="max-w-5xl mx-auto px-6 py-12">
-        <h1 class="text-5xl xl:text-7xl mb-12 text-white ml-0 xl:ml-0 font-caprasimo">
-            Nossa mais nova criação
-        </h1>
-        <div class="flex flex-col md:flex-row items-start gap-16 bg-white dark:bg-gray-900 p-6 rounded-lg">
-            <div class="flex-1 font-caprasimo text-gray-900 dark:text-white">
-                <h2 class="text-3xl xl:text-4xl mb-6">
-                    Uma decoração única e retrô
-                </h2>
-                <p class="text-lg xl:text-xl max-w-lg leading-relaxed mb-8">
-                    Conheça o produto que vai transformar seu ambiente com estilo e personalidade.
-                    Design exclusivo e acabamento impecável para quem valoriza o melhor.
-                </p>
-                <div class="flex gap-4">
-                    <!-- Botão que abre o mesmo modal de pagamento -->
-                    <button id="btnComprarNova" class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700
-                   transition-colors text-white font-bold py-3 px-8 rounded-full">
-                        Comprar Agora
-                    </button>
-                    <button class="bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600
-                   transition-colors text-white font-semibold py-3 px-8 rounded-full">
-                        Saiba Mais
-                    </button>
-                </div>
-            </div>
-
-            <div class="flex-1 flex justify-end">
-                <img src="img/tv.jpg" alt="TV" class="w-80 xl:w-[600px]
-             border-8 border-gray-300 dark:border-gray-700 
-             rounded-lg shadow-lg" />
-            </div>
-        </div>
+  <div class="max-w-5xl mx-auto px-6 py-12">
+  <h1 class="text-5xl xl:text-7xl mb-12 text-white ml-0 xl:ml-0 font-caprasimo">
+    Nossa mais nova criação
+  </h1>
+  <div class="flex flex-col md:flex-row items-start gap-16 bg-white dark:bg-gray-900 p-6 rounded-lg">
+    <div class="flex-1 font-caprasimo text-gray-900 dark:text-white">
+      <h2 class="text-3xl xl:text-4xl mb-6">
+        Uma decoração única e retrô
+      </h2>
+      <p class="text-lg xl:text-xl max-w-lg leading-relaxed mb-8">
+        Conheça o produto que vai transformar seu ambiente com estilo e personalidade.
+        Design exclusivo e acabamento impecável para quem valoriza o melhor.
+      </p>
+      <div class="flex gap-4">
+        <!-- Botão que abre o mesmo modal de pagamento -->
+        <button id="btnComprarNova" class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700
+               transition-colors text-white font-bold py-3 px-8 rounded-full">
+          Comprar Agora
+        </button>
+        <!-- Botão que abre modal de informações -->
+        <button id="btnSaibaMais" class="bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600
+               transition-colors text-white font-semibold py-3 px-8 rounded-full">
+          Saiba Mais
+        </button>
+      </div>
     </div>
-    <script>
-        // Botão da seção "Nossa mais nova criação"
-        document.getElementById("btnComprarNova").addEventListener("click", () => {
-            modalPagamento.classList.remove("hidden");
-        });
 
-    </script>
+    <div class="flex-1 flex justify-end">
+      <img src="img/tv.jpg" alt="TV" class="w-80 xl:w-[600px]
+               border-8 border-gray-300 dark:border-gray-700 
+               rounded-lg shadow-lg" />
+    </div>
+  </div>
+</div>
+
+<!-- Modal Saiba Mais -->
+<div id="modalSaibaMais" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+  <div class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg max-w-lg w-full">
+    <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Mais sobre o produto</h3>
+    <p class="text-gray-700 dark:text-gray-300 mb-6">
+      Este aquário de televisão retrô é feito a partir de TVs antigas cuidadosamente restauradas,
+      criando um item de decoração único. Perfeito para amantes de design vintage e da vida aquática.
+    </p>
+    <button id="fecharSaibaMais" class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700
+           text-white font-bold py-2 px-6 rounded-full">
+      Fechar
+    </button>
+  </div>
+</div>
+
+<script>
+  // Botão "Comprar Agora" abre modal de pagamento
+  document.getElementById("btnComprarNova").addEventListener("click", () => {
+    modalPagamento.classList.remove("hidden");
+  });
+
+  // Botão "Saiba Mais" abre modal de informações
+  document.getElementById("btnSaibaMais").addEventListener("click", () => {
+    document.getElementById("modalSaibaMais").classList.remove("hidden");
+  });
+
+  // Botão para fechar o modal "Saiba Mais"
+  document.getElementById("fecharSaibaMais").addEventListener("click", () => {
+    document.getElementById("modalSaibaMais").classList.add("hidden");
+  });
+</script>
+
 
     <main class="container mx-auto p-8">
         <section id="home" class="mb-16 text-center md:text-left px-6">
