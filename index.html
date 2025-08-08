@@ -31,6 +31,7 @@
     </script>
 
 <style>
+
 .custom-select {
     position: relative;
     width: 200px;
@@ -208,7 +209,51 @@
             </nav>
         </div>
     </header>
-<img src="img/banner.jpg" alt="">
+<img src="img/banner.jpg" alt="" style="width: 100vw;">
+<div class="max-w-5xl mx-auto px-6 py-12">
+      <h1 class="text-5xl xl:text-7xl mb-12 text-white ml-0 xl:ml-0 font-caprasimo">
+        Nossa mais nova criação
+      </h1>
+
+ <div class="flex flex-col md:flex-row items-start gap-16 bg-white dark:bg-gray-900 p-6 rounded-lg">
+  <div class="flex-1 font-caprasimo
+              text-gray-900 dark:text-white
+              ">
+    <h2 class="text-3xl xl:text-4xl mb-6">
+      Uma decoração única e retrô
+    </h2>
+    <p class="text-lg xl:text-xl max-w-lg leading-relaxed mb-8">
+      Conheça o produto que vai transformar seu ambiente com estilo e personalidade. Design exclusivo e acabamento impecável para quem valoriza o melhor.
+    </p>
+
+    <div class="flex gap-4">
+      <button
+        class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700
+               transition-colors text-white font-bold py-3 px-8 rounded-full"
+      >
+        Comprar Agora
+      </button>
+      <button
+        class="bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600
+               transition-colors text-white font-semibold py-3 px-8 rounded-full"
+      >
+        Saiba Mais
+      </button>
+    </div>
+  </div>
+
+  <div class="flex-1 flex justify-end">
+    <img
+      src="img/tv.jpg"
+      alt="TV"
+      class="w-80 xl:w-[600px]
+             border-8 border-gray-300 dark:border-gray-700 
+             rounded-lg shadow-lg"
+    />
+  </div>
+</div>
+</div>
+
     <!-- Espaços de exemplo para testar scroll -->
     <main class="container mx-auto p-8">
         <section id="home" class="mb-16">
@@ -219,27 +264,37 @@
             </p>
         </section>
 
+
         <section id="produtos" class="mb-16">
             <h2 class="text-2xl font-semibold mb-4 text-destaque dark:text-aqua-light">Produtos</h2>
             <!-- Exemplo de cards retrô -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div
-                    class="bg-white dark:bg-[#0f1f3a] rounded-lg shadow-md p-4 border-2 border-destaque hover:border-retro-orange transition">
-                    <h3 class="font-bold text-lg mb-2 text-escuro dark:text-aqua-light">Aquário Tubo Antigo #1</h3>
-                    <p class="text-sm text-gray-700 dark:text-gray-300">Um aquário estiloso feito de TV de tubo
-                        restaurada.</p>
-                </div>
-                <div
-                    class="bg-white dark:bg-[#0f1f3a] rounded-lg shadow-md p-4 border-2 border-destaque hover:border-retro-orange transition">
-                    <h3 class="font-bold text-lg mb-2 text-escuro dark:text-aqua-light">Aquário Tubo Antigo #2</h3>
-                    <p class="text-sm text-gray-700 dark:text-gray-300">Decoração vintage com vida aquática.</p>
-                </div>
-                <div
-                    class="bg-white dark:bg-[#0f1f3a] rounded-lg shadow-md p-4 border-2 border-destaque hover:border-retro-orange transition">
-                    <h3 class="font-bold text-lg mb-2 text-escuro dark:text-aqua-light">Aquário Tubo Antigo #3</h3>
-                    <p class="text-sm text-gray-700 dark:text-gray-300">Peça única com iluminação retrô e peixes
-                        tropicais.</p>
-                </div>
+<div
+  class="bg-white dark:bg-[#0f1f3a] rounded-lg shadow-md p-4 border-2 border-destaque hover:border-retro-orange transition">
+  <img src="img/1.png" class="w-70" alt="" />
+  <h3 class="font-bold text-lg mb-2 text-escuro dark:text-aqua-light">Aquário Tubo Vintage </h3>
+  <p class="text-sm text-gray-700 dark:text-gray-300">
+    Design clássico com TV de tubo restaurada e iluminação suave.
+  </p>
+</div>
+
+<div
+  class="bg-white dark:bg-[#0f1f3a] rounded-lg shadow-md p-4 border-2 border-destaque hover:border-retro-orange transition">
+  <img src="img/2.png" class="w-70" alt="" />
+  <h3 class="font-bold text-lg mb-2 text-escuro dark:text-aqua-light">Aquário Retro Azul </h3>
+  <p class="text-sm text-gray-700 dark:text-gray-300">
+    Estilo retrô com detalhes em azul e vidro reciclado.
+  </p>
+</div>
+
+<div
+  class="bg-white dark:bg-[#0f1f3a] rounded-lg shadow-md p-4 border-2 border-destaque hover:border-retro-orange transition">
+  <img src="img/3.png" class="w-70" alt="" />
+  <h3 class="font-bold text-lg mb-2 text-escuro dark:text-aqua-light">Aquário Industrial </h3>
+  <p class="text-sm text-gray-700 dark:text-gray-300">
+    Visual robusto inspirado em equipamentos antigos, ideal para ambientes modernos.
+  </p>
+</div>
             </div>
         </section>
 
@@ -771,31 +826,31 @@
         });
     </script>
 
+  <!-- footer aqui -->
+  <footer class="bg-escuro text-text-light py-8 dark:bg-black border-t-4 border-destaque">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-lg font-semibold mb-2">RetroAquário's 🐟</p>
+      <address class="not-italic text-sm mb-1">
+        Rua Marechal Deodoro, 1109, Centro, Taquaritinga – SP<br />
+        CEP: 15900-000
+      </address>
+      <p class="text-sm mb-4">
+        <strong>Segunda a Sexta:</strong> 09:00 – 18:00<br>
+        <strong>Sábado:</strong> 09:00 – 12:00<br>
+        <strong>Domingo:</strong> Fechado
+      </p>
+      <p class="text-sm mb-4">
+        Telefone: <a href="#" class="hover:text-destaque">(16) 99624-5895</a>
+      </p>
+      <div class="mt-4 flex justify-center space-x-6">
+        <a href="#" target="_blank" class="hover:text-destaque transition">WhatsApp</a>
+        <a href="#" target="_blank" class="hover:text-destaque transition">Instagram</a>
+        <a href="#" target="_blank" class="hover:text-destaque transition">Facebook</a>
+      </div>
+      <p class="mt-4 text-xs">&copy; 2025 RetroAquário's. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
-    <!-- FOOTER -->
-    <footer class="bg-escuro text-text-light py-8 dark:bg-black border-t-4 border-destaque">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-lg font-semibold mb-2">RetroAquário's 🐟</p>
-            <address class="not-italic text-sm mb-1">
-                Rua Marechal Deodoro, 1109, Centro, Taquaritinga – SP<br />
-                CEP: 15900-000
-            </address>
-            <p class="text-sm mb-4">
-                <strong>Segunda a Sexta:</strong> 09:00 – 18:00<br>
-                <strong>Sábado:</strong> 09:00 – 12:00<br>
-                <strong>Domingo:</strong> Fechado
-            </p>
-            <p class="text-sm mb-4">
-                Telefone: <a href="#" class="hover:text-destaque">(16) 99624-5895</a>
-            </p>
-            <div class="mt-4 flex justify-center space-x-6">
-                <a href="#" target="_blank" class="hover:text-destaque transition">WhatsApp</a>
-                <a href="#" target="_blank" class="hover:text-destaque transition">Instagram</a>
-                <a href="#" target="_blank" class="hover:text-destaque transition">Facebook</a>
-            </div>
-            <p class="mt-4 text-xs">&copy; 2025 RetroAquário's. Todos os direitos reservados.</p>
-        </div>
-    </footer>
 
 
     <!-- Script menu mobile -->
