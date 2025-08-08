@@ -207,72 +207,72 @@
         </div>
     </header>
     <img src="img/banner.jpg" alt="" style="width: 100vw;">
-  <div class="max-w-5xl mx-auto px-6 py-12">
-  <h1 class="text-5xl xl:text-7xl mb-12 text-white ml-0 xl:ml-0 font-caprasimo">
-    Nossa mais nova criação
-  </h1>
-  <div class="flex flex-col md:flex-row items-start gap-16 bg-white dark:bg-gray-900 p-6 rounded-lg">
-    <div class="flex-1 font-caprasimo text-gray-900 dark:text-white">
-      <h2 class="text-3xl xl:text-4xl mb-6">
-        Uma decoração única e retrô
-      </h2>
-      <p class="text-lg xl:text-xl max-w-lg leading-relaxed mb-8">
-        Conheça o produto que vai transformar seu ambiente com estilo e personalidade.
-        Design exclusivo e acabamento impecável para quem valoriza o melhor.
-      </p>
-      <div class="flex gap-4">
-        <!-- Botão que abre o mesmo modal de pagamento -->
-        <button id="btnComprarNova" class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700
+    <div class="max-w-5xl mx-auto px-6 py-12">
+        <h1 class="text-5xl xl:text-7xl mb-12 text-white ml-0 xl:ml-0 font-caprasimo">
+            Nossa mais nova criação
+        </h1>
+        <div class="flex flex-col md:flex-row items-start gap-16 bg-white dark:bg-gray-900 p-6 rounded-lg">
+            <div class="flex-1 font-caprasimo text-gray-900 dark:text-white">
+                <h2 class="text-3xl xl:text-4xl mb-6">
+                    Uma decoração única e retrô
+                </h2>
+                <p class="text-lg xl:text-xl max-w-lg leading-relaxed mb-8">
+                    Conheça o produto que vai transformar seu ambiente com estilo e personalidade.
+                    Design exclusivo e acabamento impecável para quem valoriza o melhor.
+                </p>
+                <div class="flex gap-4">
+                    <!-- Botão que abre o mesmo modal de pagamento -->
+                    <button id="btnComprarNova" class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700
                transition-colors text-white font-bold py-3 px-8 rounded-full">
-          Comprar Agora
-        </button>
-        <!-- Botão que abre modal de informações -->
-        <button id="btnSaibaMais" class="bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600
+                        Comprar Agora
+                    </button>
+                    <!-- Botão que abre modal de informações -->
+                    <button id="btnSaibaMais" class="bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600
                transition-colors text-white font-semibold py-3 px-8 rounded-full">
-          Saiba Mais
-        </button>
-      </div>
-    </div>
+                        Saiba Mais
+                    </button>
+                </div>
+            </div>
 
-    <div class="flex-1 flex justify-end">
-      <img src="img/tv.jpg" alt="TV" class="w-80 xl:w-[600px]
+            <div class="flex-1 flex justify-end">
+                <img src="img/tv.jpg" alt="TV" class="w-80 xl:w-[600px]
                border-8 border-gray-300 dark:border-gray-700 
                rounded-lg shadow-lg" />
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
-<!-- Modal Saiba Mais -->
-<div id="modalSaibaMais" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-  <div class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg max-w-lg w-full">
-    <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Mais sobre o produto</h3>
-    <p class="text-gray-700 dark:text-gray-300 mb-6">
-      Este aquário de televisão retrô é feito a partir de TVs antigas cuidadosamente restauradas,
-      criando um item de decoração único. Perfeito para amantes de design vintage e da vida aquática.
-    </p>
-    <button id="fecharSaibaMais" class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700
+    <!-- Modal Saiba Mais -->
+    <div id="modalSaibaMais" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+        <div class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg max-w-lg w-full">
+            <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Mais sobre o produto</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-6">
+                Este aquário de televisão retrô é feito a partir de TVs antigas cuidadosamente restauradas,
+                criando um item de decoração único. Perfeito para amantes de design vintage e da vida aquática.
+            </p>
+            <button id="fecharSaibaMais" class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700
            text-white font-bold py-2 px-6 rounded-full">
-      Fechar
-    </button>
-  </div>
-</div>
+                Fechar
+            </button>
+        </div>
+    </div>
 
-<script>
-  // Botão "Comprar Agora" abre modal de pagamento
-  document.getElementById("btnComprarNova").addEventListener("click", () => {
-    modalPagamento.classList.remove("hidden");
-  });
+    <script>
+        // Botão "Comprar Agora" abre modal de pagamento
+        document.getElementById("btnComprarNova").addEventListener("click", () => {
+            modalPagamento.classList.remove("hidden");
+        });
 
-  // Botão "Saiba Mais" abre modal de informações
-  document.getElementById("btnSaibaMais").addEventListener("click", () => {
-    document.getElementById("modalSaibaMais").classList.remove("hidden");
-  });
+        // Botão "Saiba Mais" abre modal de informações
+        document.getElementById("btnSaibaMais").addEventListener("click", () => {
+            document.getElementById("modalSaibaMais").classList.remove("hidden");
+        });
 
-  // Botão para fechar o modal "Saiba Mais"
-  document.getElementById("fecharSaibaMais").addEventListener("click", () => {
-    document.getElementById("modalSaibaMais").classList.add("hidden");
-  });
-</script>
+        // Botão para fechar o modal "Saiba Mais"
+        document.getElementById("fecharSaibaMais").addEventListener("click", () => {
+            document.getElementById("modalSaibaMais").classList.add("hidden");
+        });
+    </script>
 
 
     <main class="container mx-auto p-8">
@@ -390,41 +390,46 @@
 
         <!-- Modal PIX -->
         <!-- Modal PIX -->
-<div id="modalPix" class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 p-4">
-  <div
-    class="bg-white dark:bg-gray-800 dark:text-gray-100 rounded-lg p-6 w-full max-w-[85vw] max-h-[85vh] overflow-auto shadow-lg text-center">
-    <h2 class="text-xl font-bold mb-4">Pague via PIX</h2>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=chavepix@exemplo.com"
-      alt="QR Code PIX" class="mx-auto mb-4 rounded">
-    <p class="mb-4">Escaneie o QR Code acima ou use a chave:</p>
-    <p class="font-mono bg-gray-100 dark:bg-gray-700 p-2 rounded break-words">ggabrielmarcelino@gmail.com</p>
-    <button id="fecharPix"
-      class="mt-6 bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded w-full transition">Fechar</button>
-  </div>
-</div>
+        <div id="modalPix"
+            class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 p-4">
+            <div
+                class="bg-white dark:bg-gray-800 dark:text-gray-100 rounded-lg p-6 w-full max-w-[85vw] max-h-[85vh] overflow-auto shadow-lg text-center">
+                <h2 class="text-xl font-bold mb-4">Pague via PIX</h2>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=chavepix@exemplo.com"
+                    alt="QR Code PIX" class="mx-auto mb-4 rounded">
+                <p class="mb-4">Escaneie o QR Code acima ou use a chave:</p>
+                <p class="font-mono bg-gray-100 dark:bg-gray-700 p-2 rounded break-words">ggabrielmarcelino@gmail.com
+                </p>
+                <button id="fecharPix"
+                    class="mt-6 bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded w-full transition">Fechar</button>
+            </div>
+        </div>
 
-<!-- Modal Cartão -->
-<div id="modalCartao" class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 p-4">
-  <div
-    class="bg-white dark:bg-gray-800 dark:text-gray-100 rounded-lg p-6 w-full max-w-[85vw] max-h-[85vh] overflow-auto shadow-lg">
-    <h2 class="text-xl font-bold mb-4 text-center">Pagamento com Cartão</h2>
-    <form id="formCartao" class="space-y-3">
-      <input type="text" placeholder="Número do cartão"
-        class="border p-2 w-full rounded dark:bg-gray-700 dark:border-gray-600" required>
-      <input type="text" placeholder="Nome no cartão"
-        class="border p-2 w-full rounded dark:bg-gray-700 dark:border-gray-600" required>
-      <div class="flex gap-2">
-        <input type="text" placeholder="Validade (MM/AA)"
-          class="border p-2 w-1/2 rounded dark:bg-gray-700 dark:border-gray-600" required>
-        <input type="text" placeholder="CVV"
-          class="border p-2 w-1/2 rounded dark:bg-gray-700 dark:border-gray-600" required>
-      </div>
-      <button type="submit"
-        class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded w-full transition">Finalizar Pagamento</button>
-    </form>
-    <button id="fecharCartao" class="mt-6 text-gray-500 hover:underline w-full text-center">Cancelar</button>
-  </div>
-</div>
+        <!-- Modal Cartão -->
+        <div id="modalCartao"
+            class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 p-4">
+            <div
+                class="bg-white dark:bg-gray-800 dark:text-gray-100 rounded-lg p-6 w-full max-w-[85vw] max-h-[85vh] overflow-auto shadow-lg">
+                <h2 class="text-xl font-bold mb-4 text-center">Pagamento com Cartão</h2>
+                <form id="formCartao" class="space-y-3">
+                    <input type="text" placeholder="Número do cartão"
+                        class="border p-2 w-full rounded dark:bg-gray-700 dark:border-gray-600" required>
+                    <input type="text" placeholder="Nome no cartão"
+                        class="border p-2 w-full rounded dark:bg-gray-700 dark:border-gray-600" required>
+                    <div class="flex gap-2">
+                        <input type="text" placeholder="Validade (MM/AA)"
+                            class="border p-2 w-1/2 rounded dark:bg-gray-700 dark:border-gray-600" required>
+                        <input type="text" placeholder="CVV"
+                            class="border p-2 w-1/2 rounded dark:bg-gray-700 dark:border-gray-600" required>
+                    </div>
+                    <button type="submit"
+                        class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded w-full transition">Finalizar
+                        Pagamento</button>
+                </form>
+                <button id="fecharCartao"
+                    class="mt-6 text-gray-500 hover:underline w-full text-center">Cancelar</button>
+            </div>
+        </div>
 
 
         <script>
@@ -767,14 +772,14 @@
         function createStars() {
             for (let i = 1; i <= 5; i++) {
                 const star = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-star.setAttribute('data-value', i);
-star.setAttribute('viewBox', '0 0 20 20');
-star.setAttribute('fill', 'currentColor');  // <-- adiciona aqui
-star.setAttribute('role', 'radio');
-star.setAttribute('aria-checked', 'false');
-star.setAttribute('tabindex', i === 1 ? '0' : '-1');
-star.classList.add('w-8', 'h-8', 'cursor-pointer', 'text-gray-300', 'dark:text-gray-600', 'transition-colors', 'duration-200');
-star.innerHTML = `<path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.561-.955L10 0l2.949 5.955 6.561.955-4.755 4.635 1.123 6.545z"/>`;
+                star.setAttribute('data-value', i);
+                star.setAttribute('viewBox', '0 0 20 20');
+                star.setAttribute('fill', 'currentColor');  // <-- adiciona aqui
+                star.setAttribute('role', 'radio');
+                star.setAttribute('aria-checked', 'false');
+                star.setAttribute('tabindex', i === 1 ? '0' : '-1');
+                star.classList.add('w-8', 'h-8', 'cursor-pointer', 'text-gray-300', 'dark:text-gray-600', 'transition-colors', 'duration-200');
+                star.innerHTML = `<path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.561-.955L10 0l2.949 5.955 6.561.955-4.755 4.635 1.123 6.545z"/>`;
 
                 star.addEventListener('mouseover', () => highlightStars(i));
                 star.addEventListener('mouseout', () => highlightStars(currentRating)); // só volta para a seleção atual
@@ -1027,4 +1032,5 @@ star.innerHTML = `<path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.561-.955L10
         });
     </script>
 </body>
+
 </html>
